@@ -12,6 +12,7 @@ import ru.springmvchibernate.dao.abstraction.user.UserDao;
 import ru.springmvchibernate.model.User;
 import ru.springmvchibernate.util.SingleDBHelper;
 
+import javax.persistence.EntityManagerFactory;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
