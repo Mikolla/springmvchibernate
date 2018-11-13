@@ -95,7 +95,7 @@ public class User implements Serializable { // Serializable Important to Hiberna
     }
 
     public User(String name, String login, String password, String role) {
-        this.setId(-1);
+       // this.setId(-1);
         this.name = name;
         this.login = login;
         this.password = password;

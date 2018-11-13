@@ -8,6 +8,7 @@ import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
@@ -18,18 +19,24 @@ import java.util.Properties;
 
 import static ru.springmvchibernate.util.PropertiesReader.getProperties;
 
+
+
+
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = "ru.springmvchibernate")
+@EnableTransactionManagement
 public class WebConfig {
 
-	@Bean
-	ViewResolver viewResolver(){
-		InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-		resolver.setPrefix("/WEB-INF/");
-		resolver.setSuffix(".jsp");
-		return resolver;
+	@Bean(name = "viewResolver")
+	public InternalResourceViewResolver getViewResolver() {
+		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+		viewResolver.setPrefix("/WEB-INF/");
+		viewResolver.setSuffix(".jsp");
+		return viewResolver;
 	}
+
+
 
 	@Bean
 	public DataSource getDataSource(){

@@ -5,15 +5,17 @@ import ru.springmvchibernate.model.User;
 import java.util.List;
 
 public interface UserService {
-    long saveUser(User user);
+    void saveUser(User user);
 
-    User getUserById(long id);
+   /*  User getUserById(long id);
 
     void editUser(User user);
 
-    void deleteUser(long id);
+ User getUserByLogin(String login); */
 
-    List<User> getAllUsers();
+     List<User> getAllUsers();
 
-    User getUserByLogin(String login);
+     void deleteUser(long id);
+
+
 }
