@@ -112,7 +112,7 @@ public class UserDaoImplHibernate implements UserDao {
 
 
 
-    public void printConnectInfo() {
+ /*   public void printConnectInfo() {
         try {
             SessionFactoryImpl sessionFactoryImpl = (SessionFactoryImpl) sessionFactory;
             Connection connection = sessionFactoryImpl.getConnectionProvider().getConnection();
@@ -123,7 +123,7 @@ public class UserDaoImplHibernate implements UserDao {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }
+    } */
 
     private static SessionFactory createSessionFactory(Configuration configuration) {
         StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder();

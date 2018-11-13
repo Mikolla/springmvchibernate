@@ -41,20 +41,20 @@ public class WebConfig {
 		return dataSource;
 	}
 
-	@Bean
-	public LocalContainerEntityManagerFactoryBean getEntityManagerFactoryBean() {
-		LocalContainerEntityManagerFactoryBean emf = new LocalContainerEntityManagerFactoryBean();
-		emf.setDataSource(getDataSource());
-		emf.setJpaProperties(getJpaProperties());
-		emf.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
-		emf.setPackagesToScan("ru.springmvchibernate.model");
-		return emf;
-	}
+        @Bean
+        public LocalContainerEntityManagerFactoryBean getEntityManagerFactoryBean() {
+            LocalContainerEntityManagerFactoryBean emf = new LocalContainerEntityManagerFactoryBean();
+            emf.setDataSource(getDataSource());
+            emf.setJpaProperties(getJpaProperties());
+            emf.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
+            emf.setPackagesToScan("ru.springmvchibernate.model");
+            return emf;
+        }
 
-	@Bean
-	public PlatformTransactionManager txManager(){
-		return new JpaTransactionManager(getEntityManagerFactoryBean().getObject());
-	}
+        @Bean
+        public PlatformTransactionManager txManager(){
+            return new JpaTransactionManager(getEntityManagerFactoryBean().getObject());
+        }
 
 	private Properties getJpaProperties() {
 		Properties properties = new Properties();
