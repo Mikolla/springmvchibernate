@@ -54,16 +54,16 @@ public class HomeController {
 		return "redirect:/admin/allusers";
 	}
 
-/*	@RequestMapping(value="/admin/edituser", method = RequestMethod.GET)
+	@RequestMapping(value="/admin/edituser", method = RequestMethod.GET)
 	public String editUser(@RequestParam String id, Model model) {
 		User userToEdit = null;
 		long userIdToEdit = Long.parseLong(id);
 		userToEdit =  userService.getUserById(userIdToEdit);
 		model.addAttribute("user", userToEdit);
 		return "edituser";
-	} */
+	}
 
-/*	@RequestMapping(value="/admin/edituser", method = RequestMethod.POST)
+	@RequestMapping(value="/admin/edituser", method = RequestMethod.POST)
 	public String saveUser(@RequestParam String id, @RequestParam String name, @RequestParam String login, @RequestParam String password, @RequestParam String role, Model model) {
 		long userIdToEdit = Long.parseLong(id);
 		User newUser = new User(userIdToEdit, name, login, password, role);
@@ -72,7 +72,7 @@ public class HomeController {
 		users = userService.getAllUsers();
 		model.addAttribute("users", users);
 		return "redirect:/admin/allusers";
-	} */
+	}
 
 
 	

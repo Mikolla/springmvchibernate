@@ -26,10 +26,10 @@ public class User implements Serializable { // Serializable Important to Hiberna
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "name", unique = true, updatable = false)
+    @Column(name = "name", unique = true, updatable = true)
     private String name;
 
-    @Column(name = "login", unique = true, updatable = false)
+    @Column(name = "login", unique = true, updatable = true)
     private String login;
 
     @Column(name = "password", unique = false, updatable = true)

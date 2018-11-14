@@ -24,10 +24,9 @@ import static ru.springmvchibernate.util.PropertiesReader.getProperties;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "ru.springmvchibernate")
+@ComponentScan("ru.springmvchibernate")
 @EnableTransactionManagement
 public class WebConfig {
-
 	@Bean(name = "viewResolver")
 	public InternalResourceViewResolver getViewResolver() {
 		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();

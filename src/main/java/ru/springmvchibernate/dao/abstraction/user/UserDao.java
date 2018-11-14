@@ -10,10 +10,10 @@ public interface UserDao {
 
     void saveUser(User user);
 
- /*   User getUserById(long id);
+   User getUserById(long id);
 
     void editUser(User user);
-
+ /*
 
 
     User getUserByLogin(String login); */

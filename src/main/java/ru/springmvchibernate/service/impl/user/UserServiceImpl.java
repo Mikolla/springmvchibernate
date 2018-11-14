@@ -18,7 +18,7 @@ public class UserServiceImpl implements UserService{
     public void saveUser(User user) {
         userDao.saveUser(user);
     }
-/*
+
     @Override
     public User getUserById(long id) {
        return userDao.getUserById(id);
@@ -28,7 +28,7 @@ public class UserServiceImpl implements UserService{
     public void editUser(User user) {
         userDao.editUser(user);
     }
-
+/*
     @Override
     public User getUserByLogin(String login) {
         return userDao.getUserByLogin(login);
