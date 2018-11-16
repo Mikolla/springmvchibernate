@@ -26,11 +26,12 @@ public class WebAppInitialiser extends AbstractAnnotationConfigDispatcherServlet
 	@Override
 	protected String[] getServletMappings() {
 		// TODO Auto-generated method stub
+		//{"/admin/*"};
 		return new String[]{"/"};
 	}
 
-	@Override
-	public void onStartup(ServletContext servletContext) throws ServletException {
+
+/*	public void onStartup(ServletContext servletContext) throws ServletException {
 		AnnotationConfigWebApplicationContext appContext = new AnnotationConfigWebApplicationContext();
 		appContext.register(WebConfig.class);
 
@@ -38,7 +39,7 @@ public class WebAppInitialiser extends AbstractAnnotationConfigDispatcherServlet
 				"SpringDispatcher", new DispatcherServlet(appContext));
 		dispatcher.setLoadOnStartup(1);
 		dispatcher.addMapping("/");
-	}
+	} */
 
 
 }

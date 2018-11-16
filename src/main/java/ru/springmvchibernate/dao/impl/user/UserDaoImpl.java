@@ -39,9 +39,9 @@ public class UserDaoImpl implements UserDao {
     @Transactional
     public void editUser(User user) {
         User merged = em.merge(user);
-       String name =  merged.getName();
+    /*   String name =  merged.getName();
        String login = merged.getLogin();
-       em.flush();
+       em.flush(); */
 
     }
 

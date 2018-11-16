@@ -10,7 +10,7 @@
     <h1>User list</h1>
 
 
-    <form action="${pageContext.servletContext.contextPath}/admin/allusers" method="POST">
+    <form action="${pageContext.servletContext.contextPath}/admin/adduser" method="POST">
 
             <label for="uName">Username:</label>
             <input type="text" id="uName" name="name" placeholder="Input name"/>
