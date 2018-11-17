@@ -4,25 +4,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import ru.springmvchibernate.dao.abstraction.user.UserDao;
-import ru.springmvchibernate.dao.impl.user.UserDaoImpl;
 import ru.springmvchibernate.model.User;
 import ru.springmvchibernate.service.abstraction.user.UserService;
 
 import java.util.List;
 
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceQualifier implements UserService{
     @Autowired
     private UserDao userDao;
     private String name;
 
  /*   @Autowired
-    public UserServiceImpl(@Value("userServiceImpl") String name) {
+    public UserServiceQualifier(@Value("userServiceQualifier") String name) {
         this.name = name;
-    }*/
-
-    public UserServiceImpl() {
-    }
+    }  */
 
     @Override
     public void saveUser(User user) {

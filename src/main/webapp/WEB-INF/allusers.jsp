@@ -53,9 +53,9 @@
                 <td>${user.password}</td>
                 <td>${user.role}</td>
                 <td>
-                    <a href="${pageContext.servletContext.contextPath}/admin/edituser?id=${user.id}">Edit</a>
+                    <a href="${pageContext.servletContext.contextPath}/admin/edituser/${user.id}">Edit</a>
                     &nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="${pageContext.servletContext.contextPath}/admin/deluser?id=${user.id}">Delete</a>
+                    <a href="${pageContext.servletContext.contextPath}/admin/deluser/${user.id}">Delete</a>
                 </td>
             </tr>
         </c:forEach>

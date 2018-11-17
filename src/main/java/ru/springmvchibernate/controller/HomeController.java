@@ -1,6 +1,7 @@
 package ru.springmvchibernate.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +15,7 @@ import java.util.List;
 @Controller
 public class HomeController {
 	@Autowired
+	@Qualifier("userServiceQualifier")
 	private UserService userService;
 
 	@RequestMapping("/test")
@@ -42,8 +44,8 @@ public class HomeController {
 	}
 
 
-	@RequestMapping(value="/admin/deluser/id{id}", method = RequestMethod.GET)
-		public String delUser(@PathVariable("id") Long id, Model model){
+	@RequestMapping(value="/admin/deluser/{id}", method = RequestMethod.GET)
+		public String delUser(@PathVariable("id") long id, Model model){
 		long userIdToDel = id;
 		userService.deleteUser(userIdToDel);
 		List<User> users = userService.getAllUsers();
@@ -51,9 +53,9 @@ public class HomeController {
 		return "redirect:/admin/allusers";
 	}
 
-	@RequestMapping(value="/admin/edituser", method = RequestMethod.GET)
-	public String editUser(@RequestParam String id, Model model) {
-		long userIdToEdit = Long.parseLong(id);
+	@RequestMapping(value="/admin/edituser/{id}", method = RequestMethod.GET)
+	public String editUser(@PathVariable("id") long id, Model model) {
+		long userIdToEdit = id;
 		User userToEdit =  userService.getUserById(userIdToEdit);
 		model.addAttribute("user", userToEdit);
 		return "edituser";
