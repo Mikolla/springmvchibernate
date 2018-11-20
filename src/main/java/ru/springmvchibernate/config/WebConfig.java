@@ -59,7 +59,9 @@ public class WebConfig {
 
         @Bean
         public PlatformTransactionManager txManager(){
-            return new JpaTransactionManager(getEntityManagerFactoryBean().getObject());
+			JpaTransactionManager tm = new JpaTransactionManager(getEntityManagerFactoryBean().getObject());
+			tm.setDataSource(getDataSource());
+			return tm;
         }
 
 	private Properties getJpaProperties() {
