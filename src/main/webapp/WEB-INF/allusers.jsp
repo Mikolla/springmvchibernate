@@ -61,7 +61,7 @@
         </c:forEach>
 
         <tr>
-            <form action="${pageContext.servletContext.contextPath}/admin/allusers" method="POST">
+            <form action="${pageContext.servletContext.contextPath}/admin/adduser" method="POST">
 
                 <td></td>
                 <td>

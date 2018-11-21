@@ -14,9 +14,9 @@ import java.util.List;
 public class UserServiceImpl implements UserService{
     @Autowired
     private UserDao userDao;
-    private String name;
+   /* private String name;
 
- /*   @Autowired
+    @Autowired
     public UserServiceImpl(@Value("userServiceImpl") String name) {
         this.name = name;
     }*/

@@ -13,9 +13,9 @@ import java.util.List;
 public class UserServiceQualifier implements UserService{
     @Autowired
     private UserDao userDao;
-    private String name;
+   /* private String name;
 
- /*   @Autowired
+    @Autowired
     public UserServiceQualifier(@Value("userServiceQualifier") String name) {
         this.name = name;
     }  */

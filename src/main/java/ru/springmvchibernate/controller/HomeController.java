@@ -25,7 +25,7 @@ public class HomeController {
 		return "index";
 	}
 
-	@RequestMapping("/admin/allusers")
+	@RequestMapping(value="/admin/allusers", method = RequestMethod.GET)
 	public String allUsersGet(Model model){
 		List<User> users = userService.getAllUsers();
 		model.addAttribute("users", users);
